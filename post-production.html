@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post-Production Optimizer - CreatorX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="post-production-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>CreatorX</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tools">AI Tools</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><button id="backBtn" class="btn-nav" aria-label="Go back" title="Go back" style="background: #6366f1; color: white; border: none; cursor: pointer;">← Back</button></li>
+                <li><button id="logoutBtn" class="btn-nav" style="background: #ef4444; color: white; border: none; cursor: pointer;">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="post-production-container">
+        <div class="post-production-header">
+            <h1>🎞️ AI Post-Production Optimizer</h1>
+            <p>Final polish, advertiser compatibility, brand safety, and quality assurance for maximum watch time and engagement</p>
+        </div>
+
+        <div class="post-production-wrapper">
+            <!-- Input Panel -->
+            <div class="post-production-input-panel">
+                <form id="postProductionForm" class="post-production-form">
+                    <h2>Content Analysis & Quality Check</h2>
+                    
+                    <div class="form-group">
+                        <label for="contentTitle">Content Title *</label>
+                        <input type="text" id="contentTitle" name="contentTitle" placeholder="e.g., The Future of AI Technology" required>
+                        <small>What is your content about?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contentDuration">Duration *</label>
+                        <select id="contentDuration" name="contentDuration" required>
+                            <option value="">Select duration</option>
+                            <option value="short">Short (30-60 seconds)</option>
+                            <option value="medium">Medium (3-7 minutes)</option>
+                            <option value="long">Long (10-20 minutes)</option>
+                            <option value="verylong">Very Long (20+ minutes)</option>
+                        </select>
+                        <small>How long is your content?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="targetPlatform">Target Platform *</label>
+                        <select id="targetPlatform" name="targetPlatform" required>
+                            <option value="">Select platform</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="youtube-premium">YouTube Premium</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="twitch">Twitch</option>
+                            <option value="vimeo">Vimeo</option>
+                        </select>
+                        <small>Where will this be published?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contentCategory">Content Category *</label>
+                        <select id="contentCategory" name="contentCategory" required>
+                            <option value="">Select category</option>
+                            <option value="tech">Technology</option>
+                            <option value="lifestyle">Lifestyle</option>
+                            <option value="education">Education</option>
+                            <option value="entertainment">Entertainment</option>
+                            <option value="business">Business</option>
+                            <option value="health">Health & Wellness</option>
+                            <option value="finance">Finance</option>
+                            <option value="travel">Travel</option>
+                            <option value="gaming">Gaming</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <small>What category does this belong to?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="primaryGoal">Primary Goal *</label>
+                        <select id="primaryGoal" name="primaryGoal" required>
+                            <option value="">Select goal</option>
+                            <option value="watch-time">Maximize Watch Time</option>
+                            <option value="engagement">Maximize Engagement</option>
+                            <option value="monetization">Maximize Monetization</option>
+                            <option value="brand-building">Brand Building</option>
+                            <option value="conversions">Drive Conversions</option>
+                        </select>
+                        <small>What's your main objective?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="advertiserCategory">Advertiser Category *</label>
+                        <select id="advertiserCategory" name="advertiserCategory" required>
+                            <option value="">Select target advertisers</option>
+                            <option value="premium">Premium Brands (Higher CPM)</option>
+                            <option value="general">General Advertisers</option>
+                            <option value="niche">Niche Advertisers</option>
+                            <option value="mixed">Mixed Category</option>
+                        </select>
+                        <small>What type of advertisers will you attract?</small>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <label>Quality Checks (Select all that apply)</label>
+                        <div class="checkbox-grid">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="qualityChecks" value="color" checked>
+                                <span>Color Grading</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="qualityChecks" value="audio" checked>
+                                <span>Audio Quality</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="qualityChecks" value="effects" checked>
+                                <span>Visual Effects</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="qualityChecks" value="compliance" checked>
+                                <span>Compliance</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="qualityChecks" value="suitability" checked>
+                                <span>Brand Safety</span>
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="qualityChecks" value="retention" checked>
+                                <span>Retention</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contentNotes">Content Notes (Optional)</label>
+                        <textarea id="contentNotes" name="contentNotes" placeholder="Any sensitive topics, disclaimers, or special considerations?" rows="3"></textarea>
+                        <small>Provide context about your content</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" id="optimizeBtn">
+                        <span>Optimize for Post-Production</span>
+                        <span class="loading-spinner" style="display: none;">⟳</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="post-production-results-panel">
+                <div id="postProductionResultsContainer" style="display: none;">
+                    <h2>📊 Post-Production Analysis Report</h2>
+                    <div id="postProductionOutput" class="post-production-output"></div>
+                </div>
+                <div id="noPostProductionResults" class="no-results">
+                    <div class="empty-state">
+                        <div class="empty-icon">🎞️</div>
+                        <h3>Ready for Post-Production?</h3>
+                        <p>Analyze your content for final polish, advertiser compatibility, brand safety, and quality assurance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="post-production-features">
+        <div class="container">
+            <h2>Post-Production Excellence</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h4>Color Correction & Grading</h4>
+                    <p>Professional color science and correction for cinematic quality</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔊</div>
+                    <h4>Audio Mastering</h4>
+                    <p>Professional audio levels, mixing, and mastering specifications</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h4>Visual Effects</h4>
+                    <p>Motion graphics, effects optimization, and technical specifications</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h4>Brand Safety & Compliance</h4>
+                    <p>Content suitability review and advertiser-friendly certification</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h4>Retention Optimization</h4>
+                    <p>Advanced metrics and viewer engagement analysis</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h4>Quality Assurance</h4>
+                    <p>Complete technical review and export readiness check</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="post-production-script.js"></script>
+    <script>
+        // Enhanced Back button handler with accessibility and fallback
+        (function() {
+            const backBtn = document.getElementById('backBtn');
+            if (!backBtn) return;
+
+            // If there's no meaningful history or no referrer, disable and show tooltip
+            const hasReferrer = document.referrer && document.referrer !== '';
+            const hasHistory = window.history && window.history.length > 1;
+
+            function disableButton(reason) {
+                backBtn.disabled = true;
+                backBtn.setAttribute('aria-disabled', 'true');
+                backBtn.title = reason || 'No previous page';
+                backBtn.style.opacity = '0.6';
+                backBtn.style.cursor = 'not-allowed';
+            }
+
+            function enableButton() {
+                backBtn.disabled = false;
+                backBtn.removeAttribute('aria-disabled');
+                backBtn.title = backBtn.getAttribute('title') || 'Go back';
+                backBtn.style.opacity = '';
+                backBtn.style.cursor = '';
+            }
+
+            if (!hasReferrer && !hasHistory) {
+                disableButton('No previous page — will return to Home');
+            }
+
+            backBtn.addEventListener('click', function() {
+                // If disabled, fallback to index
+                if (backBtn.disabled) {
+                    window.location.href = 'index.html';
+                    return;
+                }
+
+                // Prefer history.back() when available
+                try {
+                    window.history.back();
+                    // In case history.back() doesn't navigate (e.g., single-page open), set a timeout fallback
+                    setTimeout(function() {
+                        // If still on same page after 700ms, redirect to index
+                        if (document.visibilityState === 'visible') {
+                            window.location.href = 'index.html';
+                        }
+                    }, 700);
+                } catch (err) {
+                    // On error, fallback
+                    window.location.href = 'index.html';
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

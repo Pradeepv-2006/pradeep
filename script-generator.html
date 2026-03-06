@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Script Generator - CreatorX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="script-generator-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>creatorX</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tools">AI Tools</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><button id="backBtn" class="btn-nav" style="background: #6366f1; color: white; border: none; cursor: pointer;">← Back</button></li>
+                <li><button id="logoutBtn" class="btn-nav" style="background: #ef4444; color: white; border: none; cursor: pointer;">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="script-container">
+        <div class="script-header">
+            <h1>✍️ AI Script Generator</h1>
+            <p>Create platform-optimized scripts with emotional hooks, pattern interrupts, and persuasive CTAs</p>
+        </div>
+
+        <div class="script-wrapper">
+            <!-- Input Panel -->
+            <div class="script-input-panel">
+                <form id="scriptForm" class="script-form">
+                    <h2>Script Configuration</h2>
+                    
+                    <div class="form-group">
+                        <label for="scriptTopic">Video Topic *</label>
+                        <input type="text" id="scriptTopic" name="scriptTopic" placeholder="e.g., How to Master AI Tools, Fitness Transformation Journey" required>
+                        <small>What is your video about?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="audienceType">Target Audience *</label>
+                        <select id="audienceType" name="audienceType" required>
+                            <option value="">Select audience type</option>
+                            <option value="beginners">Beginners/Learners</option>
+                            <option value="entrepreneurs">Entrepreneurs</option>
+                            <option value="professionals">Professionals</option>
+                            <option value="students">Students</option>
+                            <option value="creators">Content Creators</option>
+                            <option value="fitness">Fitness Enthusiasts</option>
+                            <option value="general">General Audience</option>
+                            <option value="tech">Tech Enthusiasts</option>
+                        </select>
+                        <small>Who is watching this video?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scriptPlatform">Platform *</label>
+                        <select id="scriptPlatform" name="scriptPlatform" required>
+                            <option value="">Select platform</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="youtube-short">YouTube Shorts</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="instagram">Instagram Reels</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="podcast">Podcast/Audio</option>
+                        </select>
+                        <small>Where will this video be published?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scriptLength">Video Length *</label>
+                        <select id="scriptLength" name="scriptLength" required>
+                            <option value="">Select length</option>
+                            <option value="short">Short Form (15-60 seconds)</option>
+                            <option value="medium">Medium Form (3-5 minutes)</option>
+                            <option value="long">Long Form (8-15 minutes)</option>
+                            <option value="ultra">Ultra Long Form (20+ minutes)</option>
+                        </select>
+                        <small>How long will the video be?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emotionalTone">Emotional Tone *</label>
+                        <select id="emotionalTone" name="emotionalTone" required>
+                            <option value="">Select tone</option>
+                            <option value="inspiring">Inspiring/Motivational</option>
+                            <option value="educational">Educational/Informative</option>
+                            <option value="entertaining">Entertaining/Funny</option>
+                            <option value="urgent">Urgent/Compelling</option>
+                            <option value="authentic">Authentic/Personal</option>
+                            <option value="controversial">Thought-Provoking/Controversial</option>
+                        </select>
+                        <small>What emotional tone should the script have?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scriptStyle">Script Style *</label>
+                        <select id="scriptStyle" name="scriptStyle" required>
+                            <option value="">Select style</option>
+                            <option value="storytelling">Storytelling/Narrative</option>
+                            <option value="tutorial">Tutorial/How-To</option>
+                            <option value="presentation">Presentation/Educational</option>
+                            <option value="interview">Interview/Conversational</option>
+                            <option value="documentary">Documentary/Analytical</option>
+                            <option value="vlog">Vlog/Personal Monologue</option>
+                        </select>
+                        <small>What format should the script follow?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scriptGoal">Primary Goal *</label>
+                        <select id="scriptGoal" name="scriptGoal" required>
+                            <option value="">Select goal</option>
+                            <option value="views">Maximize Views</option>
+                            <option value="retention">Maximize Watch Time</option>
+                            <option value="engagement">Maximize Engagement</option>
+                            <option value="conversion">Drive Conversions</option>
+                            <option value="subscribers">Get Subscribers</option>
+                            <option value="viral">Go Viral</option>
+                        </select>
+                        <small>What's the main objective?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scriptCTA">Call-To-Action *</label>
+                        <select id="scriptCTA" name="scriptCTA" required>
+                            <option value="">Select CTA type</option>
+                            <option value="subscribe">Subscribe/Follow</option>
+                            <option value="link">Click Link</option>
+                            <option value="comment">Leave Comment</option>
+                            <option value="share">Share Video</option>
+                            <option value="join">Join Community</option>
+                            <option value="multiple">Multiple CTAs</option>
+                        </select>
+                        <small>What action do you want viewers to take?</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalContext">Additional Context (Optional)</label>
+                        <textarea id="additionalContext" name="additionalContext" placeholder="Any specific points, statistics, or examples to include?" rows="3"></textarea>
+                        <small>Add any specific details or requirements</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" id="generateScriptBtn">
+                        <span>Generate Script</span>
+                        <span class="loading-spinner" style="display: none;">⟳</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="script-results-panel">
+                <div id="scriptResultsContainer" style="display: none;">
+                    <h2>📺 Generated Script</h2>
+                    <div id="scriptOutput" class="script-output"></div>
+                </div>
+                <div id="noScriptResults" class="no-results">
+                    <div class="empty-state">
+                        <div class="empty-icon">✍️</div>
+                        <h3>Ready to Generate a Script?</h3>
+                        <p>Fill in the form on the left with your topic, audience, and platform preferences, then click "Generate Script" to get a fully optimized script.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="script-features">
+        <div class="container">
+            <h2>Why Use AI Script Generation?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h4>Save Hours</h4>
+                    <p>Create professional scripts in minutes instead of hours</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h4>Pattern Interrupts</h4>
+                    <p>Built-in techniques to keep viewers engaged throughout</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💖</div>
+                    <h4>Emotional Hooks</h4>
+                    <p>Psychologically optimized to connect with viewers</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>Data-Driven</h4>
+                    <p>Scripts optimized for platform algorithms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="script-generator-script.js"></script>
+    <script>
+        // Back button handler for Script Generator
+        const scriptBackBtn = document.getElementById('backBtn');
+        if (scriptBackBtn) {
+            scriptBackBtn.addEventListener('click', function() {
+                window.history.back();
+            });
+        }
+    </script>
+</body>
+</html>

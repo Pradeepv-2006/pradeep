@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Content Ideation Tool - CreatorX</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ideation-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>CreatorX</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#tools">AI Tools</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><button id="backBtn" class="btn-nav" style="background: #6366f1; color: white; border: none; cursor: pointer;">← Back</button></li>
+                <li><button id="logoutBtn" class="btn-nav" style="background: #ef4444; color: white; border: none; cursor: pointer;">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="ideation-container">
+        <div class="ideation-header">
+            <h1>🚀 AI Content Ideation Engine</h1>
+            <p>Generate data-driven content ideas optimized for reach, engagement, and monetization</p>
+        </div>
+
+        <div class="ideation-wrapper">
+            <!-- Input Panel -->
+            <div class="ideation-input-panel">
+                <form id="ideationForm" class="ideation-form">
+                    <h2>Content Idea Generator</h2>
+                    
+                    <div class="form-group">
+                        <label for="niche">Your Niche *</label>
+                        <input type="text" id="niche" name="niche" placeholder="e.g., AI Technology, Fitness, Digital Marketing, Gaming" required>
+                        <small>Enter your content niche or industry</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="audience">Target Audience *</label>
+                        <input type="text" id="audience" name="audience" placeholder="e.g., Tech Entrepreneurs, Fitness Enthusiasts, Small Business Owners" required>
+                        <small>Describe your target audience</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="platform">Primary Platform *</label>
+                        <select id="platform" name="platform" required>
+                            <option value="">Select a platform</option>
+                            <option value="youtube">YouTube</option>
+                            <option value="tiktok">TikTok</option>
+                            <option value="instagram">Instagram Reels</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="twitter">Twitter/X</option>
+                            <option value="blog">Blog/Medium</option>
+                            <option value="podcast">Podcast</option>
+                            <option value="multi">Multi-Platform</option>
+                        </select>
+                        <small>Where you'll publish this content</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contentFormat">Content Format *</label>
+                        <select id="contentFormat" name="contentFormat" required>
+                            <option value="">Select format</option>
+                            <option value="tutorial">Tutorial/How-To</option>
+                            <option value="viral">Viral/Entertaining</option>
+                            <option value="educational">Educational</option>
+                            <option value="storytelling">Storytelling</option>
+                            <option value="trending">Trending/News</option>
+                            <option value="debate">Debate/Controversial</option>
+                            <option value="behind-scenes">Behind-the-Scenes</option>
+                        </select>
+                        <small>Type of content format</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="goals">Primary Goals (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox">
+                                <input type="checkbox" name="goals" value="reach" checked>
+                                <span>Reach & Views</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="goals" value="engagement" checked>
+                                <span>Engagement</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="goals" value="monetization" checked>
+                                <span>Monetization</span>
+                            </label>
+                            <label class="checkbox">
+                                <input type="checkbox" name="goals" value="followers" checked>
+                                <span>Followers/Subscribers</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="trendingTopics">Trending Topics (Optional)</label>
+                        <textarea id="trendingTopics" name="trendingTopics" placeholder="e.g., AI trends, viral challenges, seasonal events" rows="3"></textarea>
+                        <small>Any current trends you want to leverage</small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-large" id="generateBtn">
+                        <span>Generate Content Ideas</span>
+                        <span class="loading-spinner" style="display: none;">⟳</span>
+                    </button>
+                </form>
+            </div>
+
+            <!-- Results Panel -->
+            <div class="ideation-results-panel">
+                <div id="resultsContainer" style="display: none;">
+                    <h2>📊 Generated Content Ideas</h2>
+                    <div id="contentIdeasOutput" class="content-ideas-output"></div>
+                </div>
+                <div id="noResults" class="no-results">
+                    <div class="empty-state">
+                        <div class="empty-icon">💡</div>
+                        <h3>Ready to Generate Ideas?</h3>
+                        <p>Fill in the form on the left and click "Generate Content Ideas" to get AI-powered content suggestions optimized for your niche, audience, and platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Stats Section -->
+    <section class="quick-stats">
+        <div class="container">
+            <h2>Why Use AI Content Ideation?</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📈</div>
+                    <h4>3x More Engagement</h4>
+                    <p>AI-optimized content gets 3x more engagement than generic ideas</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⏱️</div>
+                    <h4>80% Time Saved</h4>
+                    <p>Reduce content ideation time from hours to minutes</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">💰</div>
+                    <h4>2x Revenue Growth</h4>
+                    <p>Monetization-focused ideas increase revenue opportunities</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <h4>Algorithm Optimized</h4>
+                    <p>Ideas crafted to work with platform algorithms</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+    <script src="ideation-script.js"></script>
+    <script>
+        // Back button handler for ideation page
+        const ideationBackBtn = document.getElementById('backBtn');
+        if (ideationBackBtn) {
+            ideationBackBtn.addEventListener('click', function() {
+                window.history.back();
+            });
+        }
+    </script>
+</body>
+</html>

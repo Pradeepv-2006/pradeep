@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - CreativeAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="profile-styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <h1>CreativeAI</h1>
+                </a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html#how-it-works">How It Works</a></li>
+                <li><a href="index.html#tools">AI Tools</a></li>
+                <li><a href="index.html#pricing">Pricing</a></li>
+                <li><button id="logoutBtn" class="btn-nav" style="background: #ef4444; color: white; border: none; cursor: pointer;">Logout</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Profile Container -->
+    <div class="profile-container">
+        <div class="profile-wrapper">
+            <!-- Sidebar -->
+            <aside class="profile-sidebar">
+                <div class="profile-card">
+                    <div class="profile-avatar" id="profileAvatar">👤</div>
+                    <h2 id="profileName">User Name</h2>
+                    <p id="profileEmail" class="email-text">user@example.com</p>
+                    <div class="profile-status">
+                        <span class="status-badge active">Active</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-menu">
+                    <a href="#profile" class="sidebar-link active" onclick="switchTab('profile')">
+                        <span class="menu-icon">👤</span>
+                        <span>Profile</span>
+                    </a>
+                    <a href="#settings" class="sidebar-link" onclick="switchTab('settings')">
+                        <span class="menu-icon">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                    <a href="#subscription" class="sidebar-link" onclick="switchTab('subscription')">
+                        <span class="menu-icon">💳</span>
+                        <span>Subscription</span>
+                    </a>
+                    <a href="#analytics" class="sidebar-link" onclick="switchTab('analytics')">
+                        <span class="menu-icon">📊</span>
+                        <span>Analytics</span>
+                    </a>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="profile-content">
+                <!-- Profile Tab -->
+                <div id="profile-tab" class="profile-tab active">
+                    <h2>Profile Information</h2>
+                    
+                    <div class="profile-grid">
+                        <div class="profile-field">
+                            <label>Full Name</label>
+                            <p id="displayName" class="field-value">-</p>
+                            <button class="btn btn-secondary btn-small" onclick="editField('name')">Edit</button>
+                        </div>
+
+                        <div class="profile-field">
+                            <label>Email Address</label>
+                            <p id="displayEmail" class="field-value">-</p>
+                            <button class="btn btn-secondary btn-small" onclick="editField('email')">Edit</button>
+                        </div>
+
+                        <div class="profile-field">
+                            <label>Creator Type</label>
+                            <p id="displayCreatorType" class="field-value">-</p>
+                            <button class="btn btn-secondary btn-small" onclick="editField('creator-type')">Edit</button>
+                        </div>
+
+                        <div class="profile-field">
+                            <label>Account Created</label>
+                            <p id="displayCreatedDate" class="field-value">-</p>
+                        </div>
+
+                        <div class="profile-field">
+                            <label>Google Account</label>
+                            <p id="displayGoogleStatus" class="field-value connected">Connected ✓</p>
+                        </div>
+
+                        <div class="profile-field">
+                            <label>Account Status</label>
+                            <p id="displayAccountStatus" class="field-value active">Active</p>
+                        </div>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Authentication Details</h3>
+                        <div class="auth-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Sign-In Method:</span>
+                                <span class="detail-value" id="signInMethod">Google OAuth</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Last Login:</span>
+                                <span class="detail-value" id="lastLogin">Just now</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Email Verified:</span>
+                                <span class="detail-value verified">✓ Verified</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Settings Tab -->
+                <div id="settings-tab" class="profile-tab">
+                    <h2>Account Settings</h2>
+                    
+                    <div class="settings-section">
+                        <h3>Notification Preferences</h3>
+                        <div class="setting-item">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span>Email notifications for new content ideas</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span>Weekly analytics summary</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox">
+                                <input type="checkbox">
+                                <span>Promotional offers and updates</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Privacy Settings</h3>
+                        <div class="setting-item">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span>Allow CreativeAI to use analytics for improvements</span>
+                            </label>
+                        </div>
+                        <div class="setting-item">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span>Show profile in creator directory</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h3>Danger Zone</h3>
+                        <button class="btn btn-danger" onclick="confirmDeleteAccount()">Delete Account</button>
+                        <p class="danger-text">This action cannot be undone.</p>
+                    </div>
+                </div>
+
+                <!-- Subscription Tab -->
+                <div id="subscription-tab" class="profile-tab">
+                    <h2>Subscription & Billing</h2>
+                    
+                    <div class="subscription-card">
+                        <div class="plan-badge">Free Plan</div>
+                        <h3>Current Plan</h3>
+                        <p class="plan-description">You are currently on the Free plan.</p>
+                        
+                        <div class="plan-details">
+                            <div class="detail">
+                                <span>Monthly Cost:</span>
+                                <strong>$0</strong>
+                            </div>
+                            <div class="detail">
+                                <span>Renewal Date:</span>
+                                <strong>Always Free</strong>
+                            </div>
+                            <div class="detail">
+                                <span>Content Ideas/Month:</span>
+                                <strong>5</strong>
+                            </div>
+                        </div>
+                        
+                        <a href="index.html#pricing" class="btn btn-primary">Upgrade to Pro</a>
+                    </div>
+
+                    <div class="billing-history">
+                        <h3>Billing History</h3>
+                        <p class="no-bills">No billing history yet. Upgrade to a paid plan to see billing details.</p>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div id="analytics-tab" class="profile-tab">
+                    <h2>Your Analytics</h2>
+                    
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <div class="analytics-icon">📝</div>
+                            <h4>Total Ideas Generated</h4>
+                            <p class="analytics-value">0</p>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">📺</div>
+                            <h4>Scripts Created</h4>
+                            <p class="analytics-value">0</p>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">🎬</div>
+                            <h4>Videos Optimized</h4>
+                            <p class="analytics-value">0</p>
+                        </div>
+
+                        <div class="analytics-card">
+                            <div class="analytics-icon">💰</div>
+                            <h4>Estimated Earnings</h4>
+                            <p class="analytics-value">$0</p>
+                        </div>
+                    </div>
+
+                    <div class="analytics-section">
+                        <h3>Quick Start</h3>
+                        <p>Get started with CreativeAI:</p>
+                        <a href="index.html#tools" class="btn btn-primary">Explore AI Tools</a>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Edit Modal -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeEditModal()">&times;</span>
+            <h3 id="editModalTitle">Edit Field</h3>
+            <form id="editForm" onsubmit="saveEdit(event)">
+                <div class="form-group">
+                    <label id="editLabel">Field</label>
+                    <input type="text" id="editInput" required>
+                </div>
+                <div class="form-buttons">
+                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeEditModal()">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="profile-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreatorX - AI-Powered Content Creation Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="auth-styles.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <style>
+        /* Modal styles for embedded login and signup */
+        #loginModal, #signupModal { display: none; }
+        #loginModal.active, #signupModal.active { display: block; }
+        .auth-modal .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.55); z-index: 999; }
+        .auth-modal .modal-content { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000; width: 94%; max-width: 1000px; max-height: 90vh; overflow-y: auto; }
+        .auth-modal .modal-close { position: absolute; top: 12px; right: 12px; z-index: 1010; background: rgba(0,0,0,0.6); color: #fff; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>CreatorX</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#tools">AI Tools</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="login.html" class="btn-nav">Sign In</a></li>
+                <li><a href="signup.html" class="btn-nav" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">Sign Up</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Create. Optimize. Monetize<span class="highlight">—All with AI</span></h1>
+            <p class="hero-subtitle">Transform your content creation workflow with AI-powered tools that help you ideate faster, script smarter, and grow your audience exponentially.</p>
+            <div class="hero-buttons">
+                <a href="signup.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="ai-icon">
+    <img src="images/CreatorX.png" alt="CreatorX">
+</div>
+
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <p class="section-subtitle">Your AI-powered content creation workflow in 5 steps</p>
+            
+            <div class="steps-container">
+                <a href="ideation.html" style="text-decoration: none; color: inherit;">
+                    <div class="step step-link">
+                        <div class="step-number">1</div>
+                        <h3>Ideation</h3>
+                        <p>AI generates trending content ideas tailored to your niche and audience preferences.</p>
+                        <div class="step-icon">💡</div>
+                    </div>
+                </a>
+                <div class="arrow">→</div>
+                
+                <a href="script-generator.html" style="text-decoration: none; color: inherit;">
+                    <div class="step step-link">
+                        <div class="step-number">2</div>
+                        <h3>Script Writing</h3>
+                        <p>Create engaging scripts optimized for your platform in seconds with AI assistance.</p>
+                        <div class="step-icon">✍️</div>
+                    </div>
+                </a>
+                <div class="arrow">→</div>
+                
+                <a href="post-production.html" style="text-decoration: none; color: inherit;">
+                    <div class="step step-link">
+                        <div class="step-number">3</div>
+                        <h3>Editing</h3>
+                        <p>Professional editing suggestions, captions, and visual enhancements powered by AI.</p>
+                        <div class="step-icon">🎬</div>
+                    </div>
+                </a>
+                <div class="arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Optimization</h3>
+                    <p>Optimize thumbnails, SEO, hashtags, and descriptions for maximum visibility.</p>
+                    <div class="step-icon">📈</div>
+                </div>
+                <div class="arrow">→</div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Monetization</h3>
+                    <p>Maximize revenue through ads, sponsorships, and brand deal opportunities.</p>
+                    <div class="step-icon">💰</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Tools Overview Section -->
+    <section id="tools" class="ai-tools">
+        <div class="container">
+            <h2 class="section-title">AI Tools Overview</h2>
+            <p class="section-subtitle">Powerful features designed for modern content creators</p>
+            
+            <div class="tools-grid">
+                <a href="ideation.html" style="text-decoration: none; color: inherit;">
+                    <div class="tool-card">
+                        <div class="tool-icon">🧠</div>
+                        <h3>Content Idea Generator</h3>
+                        <p>Generate trending content ideas based on your niche, audience, and current trends. Get unlimited inspiration powered by AI.</p>
+                    </div>
+                </a>
+
+                <a href="script-generator.html" style="text-decoration: none; color: inherit;">
+                    <div class="tool-card">
+                        <div class="tool-icon">📝</div>
+                        <h3>AI Script Writer</h3>
+                        <p>Write compelling scripts for YouTube, TikTok, podcasts, and blogs. Customize tone, style, and format instantly.</p>
+                    </div>
+                </a>
+
+                <a href="editing.html" style="text-decoration: none; color: inherit;">
+                    <div class="tool-card">
+                        <div class="tool-icon">🎬</div>
+                        <h3>AI Video Editor</h3>
+                        <p>Smart cuts, captions, pacing optimization, and platform-specific formatting for maximum engagement.</p>
+                    </div>
+                </a>
+
+                <a href="post-production.html" style="text-decoration: none; color: inherit;">
+                    <div class="tool-card">
+                        <div class="tool-icon">🎞️</div>
+                        <h3>Post-Production Optimizer</h3>
+                        <p>Final polish, color grading, audio mastering, brand safety, and advertiser-friendly certification.</p>
+                    </div>
+                </a>
+
+                <a href="post-prod-expert.html" style="text-decoration: none; color: inherit;">
+                    <div class="tool-card">
+                        <div class="tool-icon">🎥</div>
+                        <h3>Post-Production Expert</h3>
+                        <p>Smart cuts, visual enhancements, captions, and platform-specific formatting for maximum watch time, engagement, and monetization.</p>
+                    </div>
+                </a>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🎯</div>
+                    <h3>Caption & Subtitle Generator</h3>
+                    <p>Auto-generate accurate captions for videos with keyword optimization and multi-language support.</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🖼️</div>
+                    <h3>Smart Thumbnail Creator</h3>
+                    <p>Design eye-catching thumbnails with AI-powered suggestions and A/B testing capabilities.</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">🔍</div>
+                    <h3>SEO Optimization Engine</h3>
+                    <p>Optimize titles, descriptions, tags, and hashtags for maximum reach and engagement across platforms.</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon">📊</div>
+                    <h3>Performance Analytics</h3>
+                    <p>Track engagement, audience growth, revenue, and performance metrics in real-time with actionable insights.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <!-- Embedded Login Modal (from login.html) -->
+    <div id="loginModal">
+        <div class="modal-overlay" onclick="closeLoginModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeLoginModal()">✕</button>
+            <div class="auth-container">
+                <div class="auth-wrapper">
+                    <!-- Left Panel -->
+                    <div class="auth-panel auth-left">
+                        <div class="auth-content">
+                            <div class="auth-icon">🔐</div>
+                            <h2>Welcome Back!</h2>
+                            <p>Sign in to your CreatorX account and continue creating amazing content with AI-powered tools.</p>
+                            <div class="auth-features">
+                                <div class="feature">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Access all AI tools</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Track your analytics</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">✓</span>
+                                    <span>Manage monetization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Login Form -->
+                    <div class="auth-panel auth-right">
+                        <div class="auth-form-container">
+                            <h3>Sign In</h3>
+                            <form id="loginForm" class="auth-form">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" id="password" name="password" placeholder="••••••••" required>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-options">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="remember">
+                                        <span>Remember me</span>
+                                    </label>
+                                    <a href="#" class="forgot-password">Forgot Password?</a>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block btn-large">Sign In</button>
+                            </form>
+
+                            <div class="divider">Or continue with</div>
+
+                            <div class="social-login">
+                                <div id="g_id_onload"
+                                     data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+                                     data-callback="handleGoogleLogin"
+                                     data-auto_prompt="false">
+                                </div>
+                                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" style="width: 100%; margin-bottom: 1rem;"></div>
+                                <button class="social-btn github-btn" title="Sign in with GitHub">
+                                    <span>GitHub</span>
+                                </button>
+                                <button class="social-btn microsoft-btn" title="Sign in with Microsoft">
+                                    <span>Microsoft</span>
+                                </button>
+                            </div>
+
+                            <p class="auth-switch">Don't have an account? <a href="#" onclick="closeLoginModal(); openSignupModal(); return false;">Sign Up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Signup Modal (from signup.html) -->
+    <div id="signupModal" class="auth-modal">
+        <div class="modal-overlay" onclick="closeSignupModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeSignupModal()">✕</button>
+            <div class="auth-container">
+                <div class="auth-wrapper">
+                    <!-- Left Panel -->
+                    <div class="auth-panel auth-left">
+                        <div class="auth-content">
+                            <div class="auth-icon">🚀</div>
+                            <h2>Start Your AI Journey</h2>
+                            <p>Join thousands of creators who are already using CreativeAI to save time, boost creativity, and increase revenue.</p>
+                            <div class="auth-features">
+                                <div class="feature">
+                                    <span class="feature-icon">⚡</span>
+                                    <span>Free starter plan included</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">🎯</span>
+                                    <span>No credit card required</span>
+                                </div>
+                                <div class="feature">
+                                    <span class="feature-icon">📈</span>
+                                    <span>Start creating in minutes</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Panel - Signup Form -->
+                    <div class="auth-panel auth-right">
+                        <div class="auth-form-container">
+                            <h3>Create Account</h3>
+                            <form id="signupFormModal" class="auth-form">
+                                <div class="form-group">
+                                    <label for="fullname">Full Name</label>
+                                    <input type="text" id="fullname" name="fullname" placeholder="John Doe" required>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="signup-email">Email Address</label>
+                                    <input type="email" id="signup-email" name="email" placeholder="you@example.com" required>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="creator-type">Creator Type</label>
+                                    <select id="creator-type" name="creator-type" required>
+                                        <option value="">Select your creator type</option>
+                                        <option value="youtuber">YouTuber</option>
+                                        <option value="influencer">Social Media Influencer</option>
+                                        <option value="blogger">Blogger</option>
+                                        <option value="podcaster">Podcaster</option>
+                                        <option value="marketer">Business Marketer</option>
+                                        <option value="video">Video Creator</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="signup-password">Password</label>
+                                    <input type="password" id="signup-password" name="password" placeholder="••••••••" required>
+                                    <span class="password-hint">Min 8 characters, 1 uppercase, 1 number</span>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirm-password">Confirm Password</label>
+                                    <input type="password" id="confirm-password" name="confirm-password" placeholder="••••••••" required>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="terms" required>
+                                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                                    </label>
+                                    <span class="error-message"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block btn-large">Create Account</button>
+                            </form>
+
+                            <div class="divider">Or sign up with</div>
+
+                            <div class="social-login">
+                                <div id="g_id_onload_signup"
+                                     data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+                                     data-callback="handleGoogleSignup"
+                                     data-auto_prompt="false">
+                                </div>
+                                <div class="g_id_signin" data-type="standard" data-size="large" data-theme="outline" style="width: 100%; margin-bottom: 1rem;"></div>
+                                <button class="social-btn github-btn" title="Sign up with GitHub">
+                                    <span>GitHub</span>
+                                </button>
+                                <button class="social-btn microsoft-btn" title="Sign up with Microsoft">
+                                    <span>Microsoft</span>
+                                </button>
+                            </div>
+
+                            <p class="auth-switch">Already have an account? <a href="#" onclick="closeSignupModal(); openLoginModal(); return false;">Sign In</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Benefits</h2>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">⚡</div>
+                    <h3>Save 20+ Hours Per Week</h3>
+                    <p>Automate repetitive tasks and focus on creative strategy while AI handles the heavy lifting.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎨</div>
+                    <h3>Boost Creativity</h3>
+                    <p>Get inspired with AI-generated ideas and never face writer's block again.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">👥</div>
+                    <h3>Grow Your Audience</h3>
+                    <p>Reach more viewers with SEO-optimized content and data-driven growth strategies.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">💵</div>
+                    <h3>Increase Revenue</h3>
+                    <p>Unlock multiple income streams with intelligent monetization recommendations.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">🔄</div>
+                    <h3>Streamline Workflows</h3>
+                    <p>Automate content pipeline from ideation to publishing across all platforms.</p>
+                </div>
+
+                <div class="benefit-item">
+                    <div class="benefit-icon">📱</div>
+                    <h3>Multi-Platform Support</h3>
+                    <p>Optimize content for YouTube, TikTok, Instagram, LinkedIn, and more simultaneously.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Monetization Features Section -->
+    <section class="monetization">
+        <div class="container">
+            <h2 class="section-title">Monetization Features</h2>
+            <p class="section-subtitle">Turn your content into revenue streams</p>
+            
+            <div class="monetization-grid">
+                <div class="monetization-card">
+                    <div class="card-icon">📺</div>
+                    <h3>Ad Integration</h3>
+                    <p>Seamlessly integrate ads from multiple networks. Track earnings and optimize ad placement for maximum CPM.</p>
+                    <ul class="feature-list">
+                        <li>✓ Multi-network ad support</li>
+                        <li>✓ CPM optimization</li>
+                        <li>✓ Real-time earnings tracking</li>
+                    </ul>
+                </div>
+
+                <div class="monetization-card">
+                    <div class="card-icon">🤝</div>
+                    <h3>Sponsorship Matching</h3>
+                    <p>Connect with brands looking for creators in your niche. Get matched with perfect sponsorship opportunities.</p>
+                    <ul class="feature-list">
+                        <li>✓ AI-powered brand matching</li>
+                        <li>✓ Negotiation assistance</li>
+                        <li>✓ Sponsorship tracking</li>
+                    </ul>
+                </div>
+
+                <div class="monetization-card">
+                    <div class="card-icon">🎁</div>
+                    <h3>Brand Deals & Partnerships</h3>
+                    <p>Access exclusive brand deal opportunities from companies aligned with your audience and content style.</p>
+                    <ul class="feature-list">
+                        <li>✓ Exclusive deal access</li>
+                        <li>✓ Contract templates</li>
+                        <li>✓ Payment management</li>
+                    </ul>
+                </div>
+
+                <div class="monetization-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Revenue Tracking</h3>
+                    <p>Monitor all income sources from a single dashboard. Understand which content drives the most revenue.</p>
+                    <ul class="feature-list">
+                        <li>✓ Multi-source tracking</li>
+                        <li>✓ Revenue forecasting</li>
+                        <li>✓ Detailed reporting</li>
+                    </ul>
+                </div>
+
+                <div class="monetization-card">
+                    <div class="card-icon">📈</div>
+                    <h3>Growth Insights</h3>
+                    <p>Get actionable insights on how to scale your content and maximize revenue potential based on AI analysis.</p>
+                    <ul class="feature-list">
+                        <li>✓ Growth recommendations</li>
+                        <li>✓ Audience analytics</li>
+                        <li>✓ Performance benchmarking</li>
+                    </ul>
+                </div>
+
+                <div class="monetization-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Strategy Optimization</h3>
+                    <p>AI-powered recommendations to optimize your content strategy for maximum earnings and audience growth.</p>
+                    <ul class="feature-list">
+                        <li>✓ Content recommendations</li>
+                        <li>✓ Timing optimization</li>
+                        <li>✓ Strategy alerts</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who It's For Section -->
+    <section class="who-its-for">
+        <div class="container">
+            <h2 class="section-title">Who It's For</h2>
+            <p class="section-subtitle">CreativeAI is designed for content creators of all kinds</p>
+            
+            <div class="audience-grid">
+                <div class="audience-card">
+                    <div class="audience-icon">▶️</div>
+                    <h3>YouTubers</h3>
+                    <p>Generate ideas, write scripts, optimize thumbnails, and maximize revenue from your channel.</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">📱</div>
+                    <h3>Social Media Influencers</h3>
+                    <p>Create engaging posts, reels, and stories with AI assistance across Instagram, TikTok, and Twitter.</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">📝</div>
+                    <h3>Bloggers</h3>
+                    <p>Write SEO-optimized blog posts, generate ideas, and grow your audience with data-driven strategies.</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">🎧</div>
+                    <h3>Podcasters</h3>
+                    <p>Create compelling podcast scripts, generate show ideas, and optimize your distribution strategy.</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">💼</div>
+                    <h3>Business Marketers</h3>
+                    <p>Create marketing content, campaigns, and promotional materials with professional quality and consistency.</p>
+                </div>
+
+                <div class="audience-card">
+                    <div class="audience-icon">🎬</div>
+                    <h3>Video Creators</h3>
+                    <p>From concept to monetization, manage your entire video production workflow with AI assistance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <p class="section-subtitle">See how creators are transforming their channels with CreativeAI</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"CreativeAI has been a game-changer for my channel. I went from posting 4 videos a month to 20, and my revenue tripled. The AI script writer alone saves me hours every day."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨‍💻</div>
+                        <div>
+                            <p class="author-name">Alex Chen</p>
+                            <p class="author-title">Tech YouTuber - 500K subscribers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The monetization features are incredible. I discovered new sponsorship opportunities that I never would have found manually. My earnings increased by 240% in 3 months."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩‍🎨</div>
+                        <div>
+                            <p class="author-name">Sarah Williams</p>
+                            <p class="author-title">Instagram Influencer - 150K followers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"As a blogger, the SEO optimization tool has been invaluable. My organic traffic increased by 156% and my blog is ranking for keywords I never optimized before."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">📚</div>
+                        <div>
+                            <p class="author-name">Michael Torres</p>
+                            <p class="author-title">Tech Blogger - 50K monthly readers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The idea generator is what I use first thing in the morning. I've created some of my best-performing content using AI suggestions. My subscribers love the quality and consistency."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🎙️</div>
+                        <div>
+                            <p class="author-name">Emma Rodriguez</p>
+                            <p class="author-title">Podcaster - 100K downloads/month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The analytics dashboard shows me exactly which types of content drive revenue. I've completely restructured my content strategy and my MRP went from $2K to $8K."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">💰</div>
+                        <div>
+                            <p class="author-name">David Kim</p>
+                            <p class="author-title">Niche YouTuber - 300K subscribers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="rating">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Best investment I made for my content creation business. The software pays for itself with just one successful sponsorship match. Highly recommend to any serious creator."</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">🚀</div>
+                        <div>
+                            <p class="author-name">Jessica Park</p>
+                            <p class="author-title">Multi-Platform Creator - 2M+ followers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2 class="section-title">Simple, Transparent Pricing</h2>
+            <p class="section-subtitle">Choose the plan that fits your content creation needs</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">Free</div>
+                    <p class="plan-description">Perfect for beginners</p>
+                    
+                    <ul class="plan-features">
+                        <li>✓ 5 AI content ideas/month</li>
+                        <li>✓ Basic script templates</li>
+                        <li>✓ Caption generator (limited)</li>
+                        <li>✓ Performance analytics (basic)</li>
+                        <li>✗ SEO optimization</li>
+                        <li>✗ Monetization features</li>
+                        <li>✗ Priority support</li>
+                    </ul>
+                    
+                    <a href="signup.html" class="btn btn-secondary btn-block">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <div class="plan-name">Pro</div>
+                    <div class="plan-price">$29<span>/month</span></div>
+                    <p class="plan-description">For serious content creators</p>
+                    
+                    <ul class="plan-features">
+                        <li>✓ Unlimited AI content ideas</li>
+                        <li>✓ Advanced script writer</li>
+                        <li>✓ Unlimited captions & subtitles</li>
+                        <li>✓ Smart thumbnail creator</li>
+                        <li>✓ SEO optimization (all platforms)</li>
+                        <li>✓ Advanced analytics</li>
+                        <li>✓ Monetization dashboard</li>
+                        <li>✓ Email support</li>
+                    </ul>
+                    
+                    <a href="signup.html" class="btn btn-primary btn-block">Start Free Trial</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <p class="plan-description">For agencies & teams</p>
+                    
+                    <ul class="plan-features">
+                        <li>✓ All Pro features</li>
+                        <li>✓ Multi-user accounts</li>
+                        <li>✓ White-label options</li>
+                        <li>✓ API access</li>
+                        <li>✓ Brand deal matching</li>
+                        <li>✓ Revenue optimization</li>
+                        <li>✓ Dedicated account manager</li>
+                        <li>✓ Priority support (24/7)</li>
+                    </ul>
+                    
+                    <a href="signup.html" class="btn btn-secondary btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Content Creation?</h2>
+            <p>Join thousands of creators who are already saving time, growing faster, and earning more with CreativeAI.</p>
+            <div class="cta-buttons">
+                <a href="signup.html" class="btn btn-primary btn-large">Start Creating Smarter with AI</a>
+                <a href="signup.html" class="btn btn-secondary btn-large">Schedule a Demo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>Email</h3>
+                        <p><a href="mailto:hello@creatorX.com">hello@creatorX.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Support</h3>
+                        <p><a href="mailto:support@creatorX.com">support@creatorX.com</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>Phone</h3>
+                        <p><a href="tel:+1234567890">+1 (234) 567-890</a></p>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>CreatorX</h4>
+                    <p>AI-powered content creation platform helping creators succeed.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#tools">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Social</h4>
+                    <div class="social-links">
+                        <a href="#" title="Twitter">𝕏</a>
+                        <a href="#" title="LinkedIn">in</a>
+                        <a href="#" title="YouTube">▶</a>
+                        <a href="#" title="Instagram">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 CreatorX. All rights reserved. Empowering creators worldwide.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Modal control for embedded login
+        const loginModal = document.getElementById('loginModal');
+        document.getElementById('openLogin').addEventListener('click', function(e) {
+            e.preventDefault();
+            loginModal.classList.add('active');
+        });
+
+        function closeLoginModal() {
+            loginModal.classList.remove('active');
+        }
+
+        function openLoginModal() {
+            loginModal.classList.add('active');
+        }
+
+        // Signup Modal Handlers
+        const signupModal = document.getElementById('signupModal');
+        document.getElementById('openSignup').addEventListener('click', function(e) {
+            e.preventDefault();
+            signupModal.classList.add('active');
+        });
+
+        function closeSignupModal() {
+            signupModal.classList.remove('active');
+        }
+
+        function openSignupModal() {
+            signupModal.classList.add('active');
+        }
+
+        // Simple form handler (mirrors auth-script behavior)
+        document.addEventListener('submit', function(e) {
+            if (e.target && e.target.id === 'loginForm') {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                // Very basic client-side stub: store user data
+                const user = { email };
+                localStorage.setItem('userData', JSON.stringify(user));
+                alert('Signed in as ' + email);
+                closeLoginModal();
+            } else if (e.target && e.target.id === 'signupFormModal') {
+                e.preventDefault();
+                const fullname = document.getElementById('fullname').value;
+                const email = document.getElementById('signup-email').value;
+                const creatorType = document.getElementById('creator-type').value;
+                const password = document.getElementById('signup-password').value;
+                const confirmPassword = document.getElementById('confirm-password').value;
+
+                if (password !== confirmPassword) {
+                    alert('Passwords do not match!');
+                    return;
+                }
+
+                // Store user data
+                const user = { fullname, email, creatorType };
+                localStorage.setItem('userData', JSON.stringify(user));
+                alert('Account created! Welcome ' + fullname);
+                closeSignupModal();
+                // Redirect to first tool or home
+                // window.location.href = 'ideation.html';
+            }
+        });
+    </script>
+</body>
+</html>
